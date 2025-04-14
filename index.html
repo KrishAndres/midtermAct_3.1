@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Banner</title>
+	<style>
+		body {
+			font-family: Arial;
+		}
+		button {
+			width: 200px;
+			height: 100px;
+			font-size: 1.5em;
+			margin-top: 10px;
+		}
+		#content {
+			margin: 10px;
+		}
+		.container {
+			border-style: solid;
+			background-color: #ff69b4;
+			height: auto;
+			width: 700px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="content-list">
+			<h2 id="title">Mabuhay! I'm John Mark</h2>
+			<ul>
+				<li>
+					I'm a Computer Science student at Emilio Aguinaldo College-Cavite.
+				</li>
+				<li>
+					Doing make-up, photography, and analyzing the pageantry world are my hobbies.
+				</li>
+				<li>
+					I mostly spend my time scrolling through social media, watching movies, and working on creative crafts.
+				</li>
+				<li>
+					I'm currently the Public Relations Officer of Junior Philippine Computer Society-EACC.
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- Input Field -->
+	<p>	
+	Add New: <input type="text" id="newSkill" placeholder="add new here">
+	</p>
+
+	<!-- Buttons to change style -->
+    <button id="demoButton" onclick="addNewElement()">Add new item on the list</button>
+	<button id="demoButton" onclick="makeBold()">Make the list on Bold</button>
+	<button id="demoButton" onclick="changeFont()">Change the font of the banner</button>
+    
+	<script>
+
+        function makeBold() {
+            var listItems = document.querySelectorAll("#content-list li");
+            listItems.forEach(function(item) {
+                item.style.fontWeight = "bold";
+            });
+        }
+
+        function changeFont() {
+            var listItems = document.querySelectorAll("#content-list");
+            listItems.forEach(item => {
+                item.style.fontFamily = "georgia, serif";
+            });
+        }
+
+		function addNewElement() {
+			var myInput = document.getElementById("newSkill").value;
+			var ul = document.querySelector('ul');
+			var li = document.createElement('li');
+			li.appendChild(document.createTextNode(myInput));
+			ul.appendChild(li);
+		}
+
+	</script>
+
+
+
+</body>
+</html>
